@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "20587370924",
+    "project_id": "orikitestsss",
+    "storage_bucket": "orikitestsss.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20587370924:android:d167b7c5c3b77155ba0209",
+        "android_client_info": {
+          "package_name": "com.example.oriki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20587370924-6mo13hqro4kh0j44dqbjmvfavrsdao8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxhX8Bp6da9LNmK_1KT6frAKvB5BojxM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20587370924-6mo13hqro4kh0j44dqbjmvfavrsdao8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "20587370924-905r12k6o9pl9de9pr4sc6883skd48jq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.oriki"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,6 +5,7 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:intl/intl.dart';
 import 'package:oriki/Firestore/db_service.dart';
 import 'package:oriki/Model/dob_model.dart';
+import 'package:oriki/Services/notification_services.dart';
 import 'package:oriki/Widgets/custom_form_field.dart';
 
 class AddEdit extends StatefulWidget {
@@ -24,6 +25,8 @@ class _AddEditState extends State<AddEdit> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   DobModel? _dobModel;
   String? uid;
+  String? formattedTimeOfDay;
+  final _notificationService = NotificationService();
 
   @override
   didChangeDependencies() {
@@ -116,6 +119,13 @@ class _AddEditState extends State<AddEdit> {
                               email: email.text,
                               number: int.parse(number.text),
                               date: Timestamp.fromDate(date!));
+                          final localizations =
+                              MaterialLocalizations.of(context);
+                          formattedTimeOfDay =
+                              localizations.formatFullDate(date!);
+                          final passedDate = date;
+                          _notificationService.trialNoti(
+                              passedDate.toString(), name.text);
                           _repository
                               .createUser(dobs)
                               .whenComplete(() => Navigator.of(context).pop());

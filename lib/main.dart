@@ -3,11 +3,13 @@ import 'package:oriki/Firestore/db_service.dart';
 import 'package:oriki/Model/dob_model.dart';
 import 'package:oriki/Screens/addedit.dart';
 import 'package:oriki/Screens/home.dart';
+import 'package:oriki/Services/notification_services.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  NotificationService().initNotification();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }

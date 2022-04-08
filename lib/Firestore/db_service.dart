@@ -9,9 +9,10 @@ class Repository {
   }
 
   Stream<List<DobModel>> getUser() {
-    final data = userdata.snapshots().map((data) => data.docs
-        .map((document) => DobModel.fromJson(document.data()))
-        .toList());
+    final data = userdata.orderBy('date', descending: false).snapshots().map(
+        (data) => data.docs
+            .map((document) => DobModel.fromJson(document.data()))
+            .toList());
     return data;
   }
 
